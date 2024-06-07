@@ -29,13 +29,14 @@ async def Hola(ctx):
     await ctx.send(f'En que te puedo ayudar?')
 
 @bot.command()
-async def ayuda(ctx):
+async def Ayuda(ctx):
     await ctx.send(f'Hola, Aqui tienes algunas acciones que me puedes preguntar')
     time.sleep(2)
     await ctx.send(f'Lista de cosas organicas($LCorganicas)')
     await ctx.send(f'Lista de cosas inorganicas($LCinorganicas)')
     await ctx.send(f'Noticias sobre el medio ambiente($Noticias)')
-    await ctx.send(f'Recomendaciones($recomendacione)')
+    await ctx.send(f'Recomendaciones($Recomendaciones)')
+    await ctx.send(f'Ideas Para Reciclar($Ideas)')
 
 @bot.command()
 async def LCorganicas(ctx):
@@ -48,21 +49,20 @@ async def LCinorganicas(ctx):
 
 
 @bot.command()
-async def recetas(ctx):
+async def Ideas(ctx):
     recetas = ['Macetas y jardines: Corta la parte superior de una botella de plástico y perfora agujeros en la base para el drenaje. Llena con tierra y planta tus flores o hierbas favoritas. También puedes colgarlas en la pared para crear un jardín vertical. Otra opción es usar la botella entera como sistema de autorriego.','Organizadores: Las botellas de plástico transparente pueden convertirse en organizadores para objetos pequeños como botones, monedas o llaves. Corta la base y úsala como recipiente con tapa o únelas con una cremallera para hacer un monedero.']
     elemento_aleatorio = random.choice(recetas)
     await ctx.send(f"{elemento_aleatorio}")
 
 @bot.command()
-async def recomendaciones(ctx):
+async def Recomendaciones(ctx):
     recomendaciones = ['Separa cada residuo en un contenedor diferente de tu hogar.', "Crea abono para tus plantas con los restos de comida, poda o posos de café.", "Utiliza los complementos de tu ropa y accesorios como cremalleras y botones para otras prendas."]
     elemento_aleatorio = random.choice(recomendaciones)
-    await ctx.send(f"El elemento aleatorio es: {elemento_aleatorio}")
+    await ctx.send(f"{elemento_aleatorio}")
 
-
+@bot.command()
 async def Noticias(ctx):
     elemento_aleatorio = random.choice(noticias)
-    await ctx.send(f"El elemento aleatorio es: {elemento_aleatorio}")
+    await ctx.send(f"{elemento_aleatorio}")
 
-
-bot.run("Token")
+bot.run("token")
